@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+						 xmlns:viewmodels="clr-namespace:MauiBindingIssue.ViewModels;assembly=MauiBindingIssue"
+             x:Class="MauiBindingIssue.Views.QuestionPage"
+             Title="QuestionPage">
+	<ScrollView Margin="40" x:DataType="viewmodels:QuestionViewModel">
+		<StackLayout>
+
+
+			<Label Text="{Binding Description}" FontSize="Large" HorizontalOptions="Center" HorizontalTextAlignment="Center"  />
+			<Picker ItemsSource="{Binding Answers}" SelectedItem="{Binding SelectedAnswer}" />
+			<HorizontalStackLayout>
+				<Button Text="Back" Clicked="Back_Clicked" />
+				<Button Text="Next" Clicked="Next_Clicked" />
+			</HorizontalStackLayout>
+		</StackLayout>
+	</ScrollView>
+</ContentPage>
